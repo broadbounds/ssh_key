@@ -14,7 +14,7 @@ resource "local_file" "save_public_key" {
 
 # We save our private key at our specified path.
 # Allows private key instead of a password to securely access our instances
-resource "local_file" "save_public_key" {
+resource "local_file" "save_private_key" {
   content = tls_private_key.ssh_key.private_key_pem
   filename = "${var.key_path}${var.private_key_name}.pem"
 }
